@@ -33,15 +33,15 @@ VALIDATE $? "setting up NPM source"
 #It will throw error like user already exist.. so please avoid validation for such cases
 # Improvement first check if user already exist or not, if not exist then create
 
-if [ $ROBOUSEREXIST -ne 0 ];
-then
+#if [ $ROBOUSEREXIST -ne 0 ];
+#then
     
-    useradd roboshop 
+ #   useradd roboshop 
      
-else
-    echo -e "\e[33m INFO:: USER already exist"   
-fi
-
+#else
+  #  echo -e "\e[33m INFO:: USER already exist"   
+#fi
+useradd roboshop
 
 mkdir /app &>> $LOGFILE
 
