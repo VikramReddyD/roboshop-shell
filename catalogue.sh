@@ -1,8 +1,7 @@
 # /home/centos/shellscript-logs/script-name-date.log
 SCRIPT_NAME=$0
-LOGFILE=$LOGSDIR/$0-$DATE.log
+LOGFILE=/tmp/$0-$DATE.log
 USERID=$(id -u)
-#ROBOUSEREXIST=$(id roboshop)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -21,6 +20,17 @@ VALIDATE(){
         exit 1
     else
         echo -e "$2 ... $G SUCCESS $N"
+    fi
+    
+}
+
+ROBOUSERVALIDATE()
+{
+      if [ $1 -ne 0 ];
+    then
+        useradd roboshop 
+    else
+        echo -e "\e[33m INFO:: USER already exist" 
     fi
 }
 
