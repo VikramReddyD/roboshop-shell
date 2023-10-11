@@ -33,7 +33,7 @@ VALIDATE $? "setting up NPM source"
 #It will throw error like user already exist.. so please avoid validation for such cases
 # Improvement first check if user already exist or not, if not exist then create
 
-if [ $ROBOUSEREXIST -ne 0 ]
+if [ $ROBOUSEREXIST -ne 0 ];
 then
     
     useradd roboshop 
